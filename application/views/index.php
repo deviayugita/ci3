@@ -4,21 +4,16 @@
   <head>
     <style>
 .blog {
-   /* background-color: red;
-    color: white;*/
     border: none;
     cursor: pointer;
-    padding:20px;
-    margin-top:20px;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .dropdown-child {
     display: none;
     background-color: black;
-   /* min-width: 200px;*/
 }
 .dropdown-child a {
     /*color: white;*/
@@ -71,34 +66,13 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
-            </li> -->
             <div class="dropdown">
               <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="#">Blog</a></li>
               <div class="dropdown-child">
                 <a href="#blog">Read</a>
-                <a href="#list">List</a>
+                <a href="insert#insert">insert</a>
               </div>
             </div>
-
-
-           <!--  <div class="dropdown">
-            <li class="nav-item">
-              <a class="blog" href="#blog">Blog</a></li>
-              <div class="dropdown-child">
-              <a href="http://wwww.yourdonain.com/page1.html">List</a>
-              <a href="http://wwww.yourdonain.com/page2.html">Read</a>
-            </div>
-          </div> -->
-            
-
-
-            <!-- <button class="blog">Main menu</button>
-            <div class="dropdown-child">
-              <a href="http://wwww.yourdonain.com/page1.html">Child menu 1</a>
-              <a href="http://wwww.yourdonain.com/page2.html">Child menu 2</a>
-            </div></div> -->
 
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -216,20 +190,7 @@
                   </div>
                 </div>
               </li>
-              <!-- <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="http://localhost:8080/ci3/assets/img/about/4.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li> -->
+              
               <li class="timeline-inverted">
                 <div class="timeline-image">
                   <h4>Be
@@ -257,68 +218,23 @@
         </div>
         <div class="row">
          
+         <?php foreach ($Blog_list as $key) { ?>
           <div class="col-lg-12 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                 </div>
               </div>
-              <p><strong>Pengertian, Tujuan, Manfaat, jenis, dan Ciri dari Laporan</strong></p>
+              <p><strong><?php echo $key->Judul ?></strong></p>
             </a>
             <div class="portfolio-caption">
-              <p class="text-muted">Pengertian laporan adalah bentuk penyajian fakta tentang suatu keadaan atau suatu kegiatan, pada dasarnya fakta yang disajikan itu. berkenaan dengan tanggung jawab yang ditugaskan kepada si pelapor. Fakta
-               yang disajikan merupakan bahan atau keterangan untuk informasi yang 
-              dibutuhkan...</p>
+              <p class="text-muted"><?php echo $key->Konten ?></p>
             </div>
           </div>
-          
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian dan Fungsi Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              <p class="text-muted"><strong>Pengertian Laporan</strong> – Bagi kamu yang aktif di 
-                  organisasi ataupun berprofesi sebagai pekerja kantoran, pasti sangat 
-                  familiar sekali dengan yang namanya laporan. Setiap mengadakan kegiatan 
-                  pasti harus ada laporan, ingin rapat ataupun setelah rapat juga harus 
-                  ada laporan, masalah kas bulanan juga...</p>
-            </div>
-          </div>
+          <?php } ?>
 
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian, Tujuan, Manfaat, jenis, dan Ciri dari Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              <p class="text-muted">Pengertian laporan adalah bentuk penyajian fakta tentang suatu keadaan atau suatu kegiatan, pada dasarnya fakta yang disajikan itu. berkenaan dengan tanggung jawab yang ditugaskan kepada si pelapor. Fakta
-               yang disajikan merupakan bahan atau keterangan untuk informasi yang 
-              dibutuhkan...</p>
-            </div>
-          </div>
 
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian dan Fungsi Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              <p class="text-muted"><strong>Pengertian Laporan</strong> – Bagi kamu yang aktif di 
-                  organisasi ataupun berprofesi sebagai pekerja kantoran, pasti sangat 
-                  familiar sekali dengan yang namanya laporan. Setiap mengadakan kegiatan 
-                  pasti harus ada laporan, ingin rapat ataupun setelah rapat juga...</p>
-            </div>
-          </div>
+
 
         </div>
       </div>
@@ -326,66 +242,7 @@
 
 
 
-  <!-- list -->
-    <section class="bg-light" id="list">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Blog</h2>
-            <h3 class="section-subheading text-muted">Recomended Blog (LIST) .</h3>
-          </div>
-        </div>
-        <div class="row">
-         
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian, Tujuan, Manfaat, jenis, dan Ciri dari Laporan</strong></p>
-            </a>
-          </div>
-          
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian dan Fungsi Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              
-          </div>
-
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian, Tujuan, Manfaat, jenis, dan Ciri dari Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              
-          </div>
-
-          <div class="col-lg-12 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                </div>
-              </div>
-              <p><strong>Pengertian dan Fungsi Laporan</strong></p>
-            </a>
-            <div class="portfolio-caption">
-              
-          </div>
-
-        </div>
-      </div>
-    </section>
+ 
 
 
      <!-- Portfolio Modals -->
@@ -404,41 +261,26 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
-                  <h1 class="entry-title">Pengertian, Tujuan, Manfaat, jenis, dan Ciri dari Laporan</h1>  </header><!-- .entry-header -->
+                
+          <?php foreach ($Blog_list as $key) { ?>
+          <div class="col-lg-12 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <p><h1><?php echo $key->Judul ?></h1></p>
+              <p><i><?php echo $key->Autor ?></i></p>
+              <p><i><?php echo $key->Tanggal ?></i></p>
+              <p><img class="mx-auto rounded-circle" src=" <?php echo $key->Image ?>
+                " alt=""></p>
+              <p><font color="black"><?php echo $key->Konten ?></font></p>
+            </a>
+          </div>
+          <?php } ?>
 
-  <div class="entry-content">
-    <p><strong>Pengertian</strong></p>
-    <p>Pengertian laporan adalah bentuk penyajian fakta tentang suatu 
-    keadaan atau suatu kegiatan, pada dasarnya fakta yang disajikan itu 
-    berkenaan dengan tanggung jawab yang ditugaskan kepada si pelapor. Fakta
-     yang disajikan merupakan bahan atau keterangan untuk informasi yang 
-    dibutuhkan, berdasarkan keadaan objektif yang dialami sendiri oleh si 
-    pelapor (dilihat, didengar, atau dirasakan sendiri) ketika si pelapor 
-    telah melakukan suatu kegiatan atau pekerjaan.</p><br>
-    <p><strong>Tujuan Laporan</strong></p>
-    <ul>
-    <li>Mengenalpasti masalah</li>
-    <li>Memberikan maklumat dan fakta</li>
-    <li>Mencadangkan penyelesaian</li>
-    <li>Mencadangkan tindakan yang perlu dilakukan</li>
-    <li>Membuat kesimpulan</li>
-    <li>Menilai sesuatu penyelidikan atau aktiviti</li>
-    <li>Membuat rekod sesuatu peristiwa</li>
-    <li>Menganalisi aktiviti perniagaan</li>
-    <li>Mensintesis sesuatu pelan tindakan</li>
-    <li>Menghuraikan sesuatu peristiwa, prosedur, tindakan dll.</li>
-    </ul>
-    <p>Laporan boleh berbentuk pendek atau panjang dalam format informal atau formal</p>
-    <p><strong>Manfaat Laporan</strong></p>
-    <p>Laporan kegiatan merupakan alat yang penting untuk :</p>
-    <ol>
-    <li>Dasar penentuan kebijakan dan pengarahan pimpinan.</li>
-    <li>Bahan penyusunan rencana kegiatan berikutnya.</li>
-    <li>Mengetahui perkembangan dan proses peningkatan kegiatan.</li>
-    <li>Data sejarah perkembangan satuan yang bersangkutan dan lain-lain.</li>
-    </ol>
-    <p>sumber:http://bald-gugungondrong.blogspot.co.id/2013/05/pengertian-tujuan-manfaat-jenis-dan.html</p>
-  </div><!-- .entry-content -->
+
+
                   <button class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fa fa-times"></i>
                     Close Project</button>
@@ -450,62 +292,6 @@
       </div>
     </div>
 
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2>Pengertian Dan Fungsi Laporan</h2>
-                  <p><strong>Pengertian Laporan</strong> – Bagi kamu yang aktif di 
-                  organisasi ataupun berprofesi sebagai pekerja kantoran, pasti sangat 
-                  familiar sekali dengan yang namanya laporan. Setiap mengadakan kegiatan 
-                  pasti harus ada laporan, ingin rapat ataupun setelah rapat juga harus 
-                  ada laporan, masalah kas bulanan juga harus laporan kepada pimpinan.</p>
-                  <p>Nah, dengan begitu pasti kamu sudah terbiasa dengan sesuatu itu. 
-                  Tapi, apakah kamu ataupun mereka yang sering bertemu dengan laporan ini 
-                  tahu artinya? Jika belum tahu, simak aja artikel ini sampai habis.</p>
-
-                  <p>Laporan ialah sebuah bentuk dokumen atau penyajian yang berisi 
-                  tentang fakta suatu keadaan atau kegiatan. Fakta yang disajikan dan 
-                  dirangkai tersebut berkaitan dengan tanggung jawab yang diberikan kepada
-                   orang bersangkutan.</p>
-                  <p>Fakta ini berisi sebuah keterangan ataupun informasi yang didapatkan 
-                  dari pengamatan atau yang dialami oleh orang yang diberi tanggung jawab.</p>
-
-                  <h2>Fungsi Laporan</h2>
-                  <p>Sebagaimana laporan merupakan sesuatu yang vital dalam ruang lingkup 
-                  perusahaan ataupu organisasi. Sesuatu yang selalu dibutuhkan dalam 
-                  setiap kegiatan. Dengan begitu kita dapat meniti bahwa laporan pasti 
-                  memiliki fungsi yang amat penting. Berikut ini penjelasannya.</p>
-                  <p>Fungsi laporan terdiri dari:</p>
-                  <ol>
-                  <li>Sebagai sarana menyampaikan informasi</li>
-                  <li>Sebagai bahan pertanggung jawaban</li>
-                  <li>Sebagai bahan evaluasi</li>
-                  <li>Sarana pengawasan</li>
-                  <li>Sebagai bahan pengambilan keputusan</li>
-                  </ol>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  
 
 
     <!-- Contact -->
@@ -524,7 +310,7 @@
               <p class="section-heading">Programmer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#www.pinterest.com">
+                  <a href="www.pinterest.com">
                     <i class="fa fa-pinterest"></i>
                   </a>
                 </li>
