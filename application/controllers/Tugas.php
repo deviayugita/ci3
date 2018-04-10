@@ -8,8 +8,8 @@ class Tugas extends CI_Controller {
 		$this->load->view('index', $data);
 	}
 
-	public function ini(){
-		$this->load->view('insert_blog');
+	public function detail(){
+		$this->load->view('detail');
 	}
 
 	public function insert(){
