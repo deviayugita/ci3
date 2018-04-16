@@ -53,7 +53,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index#page-top">Devi Ayu Gita</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Devi Ayu Gita</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -61,16 +61,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index#Home">Home</a>
+              <a class="nav-link js-scroll-trigger" href="#Home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <div class="dropdown">
               <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="#">Blog</a></li>
               <div class="dropdown-child">
-                <a href="index#blog">Read</a>
-                <a href="Tugas/insert">insert</a>
+                <a href="blog">Read</a>
+                <a href="insert">insert</a>
               </div>
             </div>
 
@@ -85,67 +85,65 @@
       </div>
     </nav>
 
-    <!-- Header -->
-    <header class="masthead">
+
+     <!-- blog -->
+    <section class="bg-light" id="blog">
       <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Welcome To My Profil!</div>
-          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#Home">Contact Us</a>
-        </div>
-      </div>
-    </header>
-
-   
-
-     <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Blog</h2>
+            <h3 class="section-subheading text-muted">Recomended Blog.</h3>
           </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                
-                    <?php foreach ($Blog_list as $key) { ?>
-                    <div class="col-lg-12 portfolio-item">
-                      <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                          <div class="portfolio-hover-content">
-                          </div>
-                        </div>
-                        <p><h1><?php echo $key->Judul ?></h1></p>
-                        <p><i><?php echo $key->Autor ?></i></p>
-                        <p><i><?php echo $key->Tanggal ?></i></p>
-                        <p><img class="mx-auto rounded-circle" src=" <?php echo $key->Image ?>
-                          " alt=""></p>
-                          <p><?php echo "<img src='".base_url()."assets/img/".$row['Image']."' width='200' height='150'>"?></p>
-                        <p><font color="black"><?php echo $key->Konten ?></font></p>
-                      </a>
-                    </div>
-                    <?php } ?>
-
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
+        </div>
+        <div class="row">
+         
+         <?php foreach ($Blog_list as $key) { ?>
+          <div class="col-lg-12 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="detail">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
                 </div>
               </div>
+              <p><strong><?php echo $key->Judul ?></strong></p>
+            </a>
+            <div class="portfolio-caption">
+              <p class="text-muted"><?php echo $key->Konten ?></p>
             </div>
           </div>
+          <?php } ?>
+
+         <!--  <?php
+            foreach ($artikel['select']->result_array() as $row){
+          ?>
+           <h4><small>POSTS</small></h4>
+           <hr>
+           <h2><?php echo $row['Judul']?></h2>
+           <h5><span class="glyphicon glyphicon-time"></span> Diposting oleh <?php echo $row['author']?>, <?php echo $row['tanggal']?>.</h5>
+            <div class="row">
+                <div class="col-sm-3">
+                  <p><?php echo "<img src='".base_url()."assets/img/".$row['gambar']."' width='200' height='150'>"?></p>
+                </div>  
+                <div class="com-sm-9">
+                  <p><?php echo $row['artikel']?></p>
+                </div>
+            </div>
+              <p><a href="<?php echo site_url('blogger/baca-artikel/'.$row['id'])?>" class="btn btn-default">Lanjutkan =></a> 
+                 <a href="<?php echo site_url('blogger/edit/'.$row['id'])?>" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
+                 <a href="<?php echo site_url('blogger/delete/'.$row['id']) ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+              </p>
+                <br>
+                 <?php
+                }
+
+
+?>
         </div>
       </div>
-    </div>
+    </section> -->
 
 
- 
+
+ </div></div></section></body>
     <!-- Footer -->
     <footer>
       <div class="container">
