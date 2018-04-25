@@ -54,6 +54,10 @@
     <!-- Custom scripts for this template -->
     <script src="http://localhost:8080/ci3/assets/js/agency.min.js"></script>
 
+
+    <!-- plugins -->
+    <script src="<?php echo base_url() ?>assets/js/Custom.js"></script>
+
   </body>
 
 </html>

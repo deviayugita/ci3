@@ -80,6 +80,16 @@ class Tugas extends CI_Controller {
 		$this->form_validation->set_rules('judul','Judul','required');
 		$this->form_validation->set_rules('autor','Autor','required');
 		$this->form_validation->set_rules('konten','Konten','required');
+		$this->form_validation->set_rules('judul','Judul','required|is_unique[blog.judul]',
+			array(
+				'required'		=> 'di isi yaa',
+				'is_unique'		=>	'Judul'.$this->input->post('title').'sudah di isi'));
+		$this->form_validation->set_rules('konten','Konten','required|min_length[8]',
+			array(
+				'required'		=> 'di isi yaa',
+				'min_length'	=> 'isinya %s kurang panjang nih',
+			));
+
 		$this->load->model('Blog_model');
 
 		if($this->form_validation->run()==FALSE){
