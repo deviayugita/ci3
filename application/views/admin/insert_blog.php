@@ -1,4 +1,4 @@
-<?php $this->load->view('Profil/header');?>    
+<?php $this->load->view('admin/header');?>    
 <!-- insert -->
     <section class="bg-light" id="insert">
       <div class="container">
@@ -12,7 +12,7 @@
             <center><h2 class="section-heading text-uppercase"><font face="One Stroke Script LET">Insert</font></h2>
             <font class="section-subheading text-muted">Insert Blog Baru</font></center>
             <br>
-            <?php echo form_open_multipart('Tugas/insert', array('class'=>'needs-validation','novalidate'=>'')); ?>
+            <?php echo form_open_multipart('Admin/insert', array('class'=>'needs-validation','novalidate'=>'')); ?>
             <?php echo validation_errors(); ?>
             <div class="form-group">
               <p>
@@ -24,7 +24,23 @@
               <p>
                 <input type="text" class="form-control ins" name="autor" placeholder="Autor" value="<?php echo set_value('autor')?>"></p>
                 <p class="help-block text-danger"></p>
-              <textarea type="text" class="form-control ins" name="konten" value="<?php echo set_value('konten')?>"></textarea><br>
+
+              <div class="form-group">
+               <label>Kategori</label>
+               <select name="id_kategori" class="form-control">
+                  <option value="empty" hidden="">Piih Kategori</option>
+                  <?php
+                  foreach ($kategori->result() as $data) {
+                    echo "<option value='$data->id_kategori'".set_select('id_kategori',$data->id_kategori).">$data->nama</option>";
+                  }
+                  ?>
+                </select>
+              </div>
+
+              <p>
+                <textarea type="text" class="form-control ins" name="konten" value="<?php echo set_value('konten')?>"></textarea><br>
+              </p>
+              
               <p>
                 <input type="file" class="form-control ins" name="userfile" placeholder="Foto"></p>
 
@@ -42,4 +58,4 @@
       </div>
     </section>
 
-<?php $this->load->view('Profil/footer');?>
+<?php $this->load->view('admin/footer');?>

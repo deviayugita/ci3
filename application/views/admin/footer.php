@@ -32,6 +32,9 @@
               <li class="list-inline-item">
                 <a href="#">Terms of Use</a>
               </li>
+              <li class="list-inline-item">
+                <a href="<?php echo site_url('Tugas/index/')?>">Log out</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,7 +44,6 @@
    
 
     <!-- Bootstrap core JavaScript -->
-    <script src="http://localhost:8080/ci3/assets/vendor/jquery/jquery.min.js"></script>
     <script src="http://localhost:8080/ci3/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->

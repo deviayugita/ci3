@@ -24,6 +24,9 @@
 .dropdown:hover .dropdown-child {
     display: block;
 }
+.hii{
+  background-color: #212529;
+}
 </style>
 
     <meta charset="utf-8">
@@ -31,7 +34,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Devi Ayu Gita</title>
+    <font face="Back to Black Bold Demo Regular"><title>Devi Ayu Gita</title></font>
 
     <!-- Bootstrap core CSS -->
     <link href="http://localhost:8080/ci3/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,36 +55,22 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
+      <div class="container hii">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Devi Ayu Gita</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            </li>
-            <div class="dropdown">
-              <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="#">Blog</a></li>
-              <div class="dropdown-child">
-                <a href="<?php echo site_url('Tugas/read/')?>">Read</a>
-                <a href="<?php echo site_url('Tugas/insert/')?>">insert</a>
-              </div>
-            </div>
+          <ul class="navbar-nav text-uppercase ml-auto" >
 
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact" >Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
-            </li>
+
+            <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="<?php echo site_url('Tugas/index/')?>">Home</a></li>
+            <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="<?php echo site_url('Tugas/about/')?>">About</a></li>
+            <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="<?php echo site_url('Tugas/contact/')?>">Contact</a></li>
+            <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="<?php echo site_url('Tugas/gallery/')?>">Gallery</a></li>
+            <li class="nav-item"><a class="blog nav-link js-scroll-trigger" href="<?php echo site_url('Tugas/read/')?>">Blog</a></li>
+
           </ul>
         </div>
       </div>
