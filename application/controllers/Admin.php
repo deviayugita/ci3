@@ -11,6 +11,7 @@ class Admin extends CI_Controller {
         $this->load->helper('form');
         $this->load->helper('text');
         
+       
 		$this->load->model('Blog_model');
 		$this->load->model('Kategori_model');
 		$this->load->helper('url_helper','date','file','pagination');

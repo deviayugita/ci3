@@ -5,7 +5,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Welcome To My Blog!</div>
           <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#Home">Contact Us</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="<?php echo site_url('Login/login/')?>">LOGIN</a>
         </div>
       </div>
     </header>

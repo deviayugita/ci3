@@ -33,7 +33,7 @@
                 <a href="#">Terms of Use</a>
               </li>
               <li class="list-inline-item">
-                <a href="<?php echo site_url('Admin/index/')?>">Login Admin</a>
+                <a href="<?php echo site_url('Tugas/login/')?>">Login Admin</a>
               </li>
             </ul>
           </div>
