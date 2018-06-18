@@ -32,21 +32,35 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('alamat','Alamat','required');
 		$this->form_validation->set_rules('username','Username','required|is_unique[admin.username]');
 		$this->form_validation->set_rules('password','Password','required');
-		$this->form_validation->set_rules('password2','Konfirmasi Password','matches[password]');
-		// $this->form_validation->set_rules('tgl_register','Tanggal Register','required');
-		if($this->form_validation->run()===FALSE){
+		// $this->form_validation->set_rules('password2','Konfirmasi Password','matches[password]');
+		$this->form_validation->set_rules('tgl_register','','required');
+		
+
+
+		$this->load->model('Admin_model');
+		if($this->form_validation->run()==FALSE){
 			$this->load->view('user/headerHome');
 			$this->load->view('user/register',$data);
 			$this->load->view('user/footer');
 		}
 		else{
-			// encrip passwd
-			$enc_password = md5($this->input->post('password'));
-			$this->Admin_model->register($enc_password);
 
-			// tampilkan psn
-			$this->session->set_flashdata('user_registered','Registrasi Berhasil.');
-			redirect('Tugas/login');
+			// // encrip passwd
+			$enc_password = md5($this->input->post('password'));
+			// $this->Admin_model->register($enc_password);
+			
+						$data = array(
+							'nama'=>$this->input->post('nama'),
+							'email'=>$this->input->post('email'),
+							'alamat'=>$this->input->post('alamat'),
+							'username'=>$this->input->post('username'),
+							'password'=>$enc_password,
+							'tgl_register'=>$this->input->post('tgl_register')
+						);
+						$this->Admin_model->register($data);
+						$this->session->set_flashdata('user_registered','Registrasi Berhasil.');
+						redirect('Login/login');
+			
 		}
 	}
 
@@ -67,11 +81,12 @@ class Login extends CI_Controller {
 		else{
 			
 			$username=$this->input->post('username');
-			$password=md5($this->input->post('password/'));
-
-
+			$password=md5($this->input->post('password'));
 			// login
-			$id_admin = $this->Admin_model->login($username,$password);
+			$id_admin = $this->Admin_model->login($username, $password);
+
+			// print_r($id_admin);
+			// die();
 			if ($id_admin) {
 				// buat session
 				$admin_data=array(
@@ -82,10 +97,10 @@ class Login extends CI_Controller {
 
 				$this->session->set_userdata($admin_data);
 				$this->session->set_flashdata('admin_loggedin','You are now logged in');
-				redirect('Tugas/index');}
+				redirect('Admin/index');}
 				else{
 					$this->session->set_flashdata('login_failed','login is invalid');
-				redirect('Tugas/login');
+				redirect('Login/login');
 			}
 		}
 	}
@@ -101,7 +116,7 @@ public function logout(){
 
 	$this->session->set_flashdata('admin_loggedout','logout telah berhasil');
 
-	redirect('Tugas/login');
+	redirect('Login/login');
 }
 
 

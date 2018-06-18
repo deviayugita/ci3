@@ -92,7 +92,7 @@
 
 
 <!-- ============================================ -->
-<!-- <?php if(!$this->session->userdata('logged_in')): ?>
+<?php if(!$this->session->userdata('logged_in')): ?>
 
   <div class="btn-group" role="group" aria-label="Data baru">
     <?php echo anchor('Tugas/register','Register',array('class'=>'btn btn-outline-light')); ?>
@@ -101,9 +101,8 @@
 
 <?php endif; ?>
 
- -->
 <!-- ======================================================= -->
-<!-- <?php if($this->session->userdata('logged_in')): ?>
+ <?php if($this->session->userdata('logged_in')): ?>
 
   <div class="btn-group" role="group" aria-label="Data baru">
 
@@ -113,7 +112,7 @@
 
   </div>
 
-<?php endif; ?> -->
+<?php endif; ?>
 
      </div>
     </nav>

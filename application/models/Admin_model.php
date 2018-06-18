@@ -2,18 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_model extends CI_Model {
 
-	public function register($enc_password){
-		//aray data admin
-		$data=array(
-			'nama'=>$this->input->post('nama'),
-			'email'=>$this->input->post('email'),
-			'alamat'=>$this->input->post('alamat'),
-			'username'=>$this->input->post('username'),
-			'password'=>$enc_password
-			);
+	public function register($data){
+		
+     		$this->db->insert('admin', $data);
+	}
 
-		// insert admin
-		return $this->db->insert('admin', $data);
+		public function get_level(){
+		$query = $this->db->get('level');
+		return $query->result();
 	}
 
 	public function login($username, $password){

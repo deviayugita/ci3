@@ -89,6 +89,20 @@
 
 
 
+
+
+    <?php if ($this->session->flashdata('admin_registered')): ?>
+  <?php echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('admin_registered').'</div>'; ?>
+<?php endif; ?>
+
+  
+  <?php if($this->session->flashdata('login_failed')): ?>
+    <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+<?php endif; ?>
+
+  <?php if($this->session->flashdata('admin_loggedout')): ?>
+    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('admin_loggedout').'</p>'; ?>
+<?php endif; ?>
           </ul>
         </div>
       </div>

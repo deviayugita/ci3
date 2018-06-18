@@ -12,6 +12,8 @@
             <center><h2 class="section-heading text-uppercase"><font face="One Stroke Script LET">Insert</font></h2>
             <font class="section-subheading text-muted">Insert Blog Baru</font></center>
             <br>
+
+
             <?php echo form_open_multipart('Admin/insert', array('class'=>'needs-validation','novalidate'=>'')); ?>
             <?php echo validation_errors(); ?>
             <div class="form-group">
@@ -49,6 +51,8 @@
           </div>
             <?php echo form_close(); ?>
              <!-- </form> -->
+
+             
           </div>
         </div>
 

@@ -133,7 +133,8 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run()==FALSE){
 			$this->load->view('admin/insert_blog',$data);
 		}
-		else{
+		else
+		{
 				$config['upload_path']          = './assets/img/';
                 $config['allowed_types']        = 'gif|jpg|png|jpeg|JPG';
 
