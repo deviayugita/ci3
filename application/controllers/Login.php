@@ -55,7 +55,8 @@ class Login extends CI_Controller {
 							'alamat'=>$this->input->post('alamat'),
 							'username'=>$this->input->post('username'),
 							'password'=>$enc_password,
-							'tgl_register'=>$this->input->post('tgl_register')
+							'tgl_register'=>$this->input->post('tgl_register'),
+							'fk_level_id'=>$this->input->post('member')
 						);
 						$this->Admin_model->register($data);
 						$this->session->set_flashdata('user_registered','Registrasi Berhasil.');
@@ -92,12 +93,13 @@ class Login extends CI_Controller {
 				$admin_data=array(
 					'id_admin'=>$id_admin,
 					'username'=>$username,
-					'logged_in'=>true
+					'logged_in'=>true,
+					'level'=>$this->Admin_model->get_user_level($id_admin)
 				);
 
 				$this->session->set_userdata($admin_data);
 				$this->session->set_flashdata('admin_loggedin','You are now logged in');
-				redirect('Admin/index');}
+				redirect('Admin/dashboard');}
 				else{
 					$this->session->set_flashdata('login_failed','login is invalid');
 				redirect('Login/login');

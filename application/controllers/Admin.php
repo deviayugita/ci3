@@ -23,6 +23,8 @@ class Admin extends CI_Controller {
 // ==============================================================admin===================================================================================
 	public function index(){
 		$this->load->view('admin/index');
+
+
 	}
 
 
@@ -111,6 +113,14 @@ class Admin extends CI_Controller {
 
 // ===========================insert=================================
 	public function insert(){
+
+		//cek login
+		if(!$this->session->userdata('logged_in')){
+			redirect('Login/login');
+		}
+		$data['page_title']='Tulis Artikel';
+		//-----------------
+
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 
@@ -284,4 +294,18 @@ class Admin extends CI_Controller {
 	}
 }
 
+
+
+	public function dashboard(){
+		if(!$this->session->userdata('logged_in')){
+			redirect('Login/login');
+		}
+		$username = $this->session->userdata('username');
+
+		$data['admin'] = $this->Admin_model->get_user_details($username);
+
+		$this->load->view('user/headerHome');
+		$this->load->view('user/dashboard', $data);
+		$this->load->view('user/footer');
+	}
 ?>
